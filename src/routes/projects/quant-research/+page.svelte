@@ -152,8 +152,9 @@
                     </div>
 
                     <p class="mt-1 text-sm leading-6 text-gray-500">
-                        Public demo version — proprietary parameter values, research conclusions,
-                        and implementation sensitive details are intentionally redacted.
+                        Public demo of dataset research, event studies, feature engineering, and
+                        AI-assisted analysis. Proprietary parameter values and research conclusions
+                        are intentionally redacted.
                     </p>
                 </div>
             </div>
@@ -195,6 +196,19 @@
                     <p class="mt-2 text-sm leading-6 text-gray-500">
                         Combine validated statistical, technical, and event-derived features into
                         reproducible datasets with lineage and completeness diagnostics.
+                    </p>
+                </div>
+
+                <div class="card p-5">
+                    <div class="metric-label">Agentic Analysis</div>
+
+                    <div class="mt-2 font-bold text-gray-950">
+                        AI-assisted study interpretation
+                    </div>
+
+                    <p class="mt-2 text-sm leading-6 text-gray-500">
+                        Generate and persist structured research summaries from completed studies,
+                        with saved analysis history and reusable experiment context.
                     </p>
                 </div>
             </div>

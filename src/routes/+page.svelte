@@ -13,23 +13,36 @@
 	/>
 </svelte:head>
 
-<section class="border-b border-gray-200 bg-white">
+<section class="relative border-b border-gray-200 bg-white">
+<div class="pointer-events-none absolute inset-x-0 top-8 hidden md:block">
+	<div class="page-shell flex justify-end">
+		<div class="text-right">
+			<div class="text-sm font-semibold tracking-wide text-gray-500">
+				Ashley Taken
+			</div>
+
+			<div class="mt-1 text-xs font-medium text-gray-400">
+				Machine Learning Engineer
+			</div>
+		</div>
+	</div>
+</div>
     <div class="page-shell pt-8 pb-6 md:pt-10 md:pb-7">
 		<div class="max-w-5xl">
 			<div class="eyebrow mb-5">
 				Machine Learning · Applied AI · Quantitative Research
 			</div>
 
-			<h1
-				class="max-w-4xl text-4xl font-black tracking-tight text-gray-950 md:text-6xl md:leading-[1.05]"
-			>
-				Building rigorous ML systems from
-				<span class="gradient-text"> research to production.</span>
-			</h1>
+            <h1
+                class="max-w-4xl text-4xl font-black tracking-tight text-gray-950 md:text-5xl md:leading-[1.05]"
+            >
+                Machine learning engineering from
+                <span class="gradient-text"> research to production.</span>
+            </h1>
 
 			<p class="mt-3 max-w-3xl text-lg leading-8 text-gray-500">
 				Machine learning engineer and data scientist specializing in production ML,
-				time-series modeling, agentic AI, statistical experimentation, and full-stack
+				time series modeling, agentic AI, statistical experimentation, and full-stack
 				technical systems.
 			</p>
 
