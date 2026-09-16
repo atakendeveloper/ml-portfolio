@@ -1,0 +1,247 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 420 760"
+    role="img"
+    aria-labelledby="title desc"
+>
+    <title id="title">Representation Learning Model Design</title>
+    <desc id="desc">
+        High-level representation learning workflow from temporal input windows through encoding,
+        pooling, projection, self-supervised learning, learned representations, diagnostics, and
+        downstream predictive models.
+    </desc>
+
+    <defs>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow
+                dx="0"
+                dy="2"
+                stdDeviation="3"
+                flood-color="#0f172a"
+                flood-opacity="0.08"
+            />
+        </filter>
+
+        <marker
+            id="arrow"
+            markerWidth="8"
+            markerHeight="8"
+            refX="6"
+            refY="4"
+            orient="auto"
+            markerUnits="strokeWidth"
+        >
+            <path d="M0,0 L8,4 L0,8 Z" fill="#64748b" />
+        </marker>
+
+        <style>
+            .title {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+                fill: #0f172a;
+            }
+
+            .subtitle {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                fill: #64748b;
+            }
+
+            .step-label {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: 1.4px;
+                fill: #7c3aed;
+            }
+
+            .step-title {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                fill: #0f172a;
+            }
+
+            .step-body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 11px;
+                fill: #64748b;
+            }
+
+            .callout-title {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 11px;
+                font-weight: 700;
+                fill: #0f172a;
+            }
+
+            .callout-body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                fill: #64748b;
+            }
+
+            .arrow {
+                stroke: #64748b;
+                stroke-width: 1.5;
+                fill: none;
+                marker-end: url(#arrow);
+            }
+        </style>
+    </defs>
+
+    <rect
+        x="1"
+        y="1"
+        width="418"
+        height="758"
+        rx="20"
+        fill="#ffffff"
+        stroke="#e2e8f0"
+    />
+
+    <text x="210" y="42" text-anchor="middle" class="title">
+        Representation Learning
+    </text>
+
+    <text x="210" y="62" text-anchor="middle" class="subtitle">
+        SNCC Model High Level Design
+    </text>
+
+    <!-- Input windows -->
+    <g filter="url(#shadow)">
+        <rect
+            x="52"
+            y="92"
+            width="316"
+            height="76"
+            rx="14"
+            fill="#f8fafc"
+            stroke="#cbd5e1"
+        />
+    </g>
+
+    <text x="72" y="116" class="step-label">
+        INPUT
+    </text>
+
+    <text x="72" y="139" class="step-title">
+        Temporal Input Windows
+    </text>
+
+    <path d="M210 168 L210 192" class="arrow" />
+
+    <!-- Encoder -->
+    <g filter="url(#shadow)">
+        <rect
+            x="52"
+            y="198"
+            width="316"
+            height="76"
+            rx="14"
+            fill="#eff6ff"
+            stroke="#bfdbfe"
+        />
+    </g>
+
+    <text x="72" y="222" class="step-label">
+        ENCODER
+    </text>
+
+    <text x="72" y="245" class="step-title">
+        Temporal Encoder
+    </text>
+
+    <path d="M210 274 L210 298" class="arrow" />
+
+    <!-- Pooling -->
+    <g filter="url(#shadow)">
+        <rect
+            x="52"
+            y="304"
+            width="316"
+            height="76"
+            rx="14"
+            fill="#f5f3ff"
+            stroke="#ddd6fe"
+        />
+    </g>
+
+    <text x="72" y="328" class="step-label">
+        POOLING
+    </text>
+
+    <text x="72" y="351" class="step-title">
+        Sequence Pooling
+    </text>
+
+    <path d="M210 380 L210 404" class="arrow" />
+
+    <!-- Projection -->
+    <g filter="url(#shadow)">
+        <rect
+            x="52"
+            y="410"
+            width="316"
+            height="76"
+            rx="14"
+            fill="#fff7ed"
+            stroke="#fed7aa"
+        />
+    </g>
+
+    <text x="72" y="434" class="step-label">
+        PROJECTION
+    </text>
+
+    <text x="72" y="457" class="step-title">
+        Projection Head
+    </text>
+
+    <path d="M210 486 L210 510" class="arrow" />
+
+    <!-- SSL Objective -->
+    <g filter="url(#shadow)">
+        <rect
+            x="52"
+            y="516"
+            width="316"
+            height="92"
+            rx="14"
+            fill="#faf5ff"
+            stroke="#e9d5ff"
+        />
+    </g>
+
+    <text x="72" y="540" class="step-label">
+        SELF-SUPERVISED OBJECTIVE
+    </text>
+
+    <text x="72" y="563" class="step-title">
+        Representation Learning (SNCC Model)
+    </text>
+
+    <path d="M210 608 L210 632" class="arrow" />
+
+    <!-- Learned representation -->
+    <g filter="url(#shadow)">
+        <rect
+            x="52"
+            y="638"
+            width="316"
+            height="76"
+            rx="14"
+            fill="#ecfdf5"
+            stroke="#a7f3d0"
+        />
+    </g>
+
+    <text x="72" y="662" class="step-label">
+        OUTPUT
+    </text>
+
+    <text x="72" y="685" class="step-title">
+        Learned Representation
+    </text>
+</svg>

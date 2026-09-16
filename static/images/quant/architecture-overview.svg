@@ -1,0 +1,684 @@
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 1800 1120"
+	role="img"
+	aria-labelledby="title desc"
+>
+	<title id="title">Quantitative ML Research Platform Architecture</title>
+	<desc id="desc">
+		Public architecture overview showing data sources, storage and infrastructure,
+		research pipeline, modeling, evaluation, and application layers.
+	</desc>
+
+	<defs>
+		<marker
+			id="arrow"
+			viewBox="0 0 10 10"
+			refX="9"
+			refY="5"
+			markerWidth="7"
+			markerHeight="7"
+			orient="auto-start-reverse"
+		>
+			<path d="M 0 0 L 10 5 L 0 10 z" fill="#172033" />
+		</marker>
+
+		<filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+			<feDropShadow
+				dx="0"
+				dy="2"
+				stdDeviation="3"
+				flood-color="#0f172a"
+				flood-opacity="0.08"
+			/>
+		</filter>
+
+		<style>
+			.title {
+				font: 800 42px Inter, Arial, sans-serif;
+				fill: #14213d;
+			}
+
+			.subtitle {
+				font: 400 20px Inter, Arial, sans-serif;
+				fill: #53627a;
+			}
+
+			.section-title {
+				font: 800 23px Inter, Arial, sans-serif;
+				fill: #172033;
+			}
+
+			.section-subtitle {
+				font: 400 14px Inter, Arial, sans-serif;
+				fill: #667085;
+			}
+
+			.box-title {
+				font: 700 17px Inter, Arial, sans-serif;
+				fill: #172033;
+			}
+
+			.box-text {
+				font: 400 13px Inter, Arial, sans-serif;
+				fill: #53627a;
+			}
+
+			.small-title {
+				font: 700 14px Inter, Arial, sans-serif;
+				fill: #172033;
+			}
+
+			.small-text {
+				font: 400 12px Inter, Arial, sans-serif;
+				fill: #53627a;
+			}
+
+			.flow-label {
+				font: 600 13px Inter, Arial, sans-serif;
+				fill: #53627a;
+			}
+
+			.footer {
+				font: 700 15px Inter, Arial, sans-serif;
+				fill: #314158;
+			}
+
+			.public-note {
+				font: italic 12px Inter, Arial, sans-serif;
+				fill: #94a3b8;
+			}
+
+			.arrow {
+				stroke: #172033;
+				stroke-width: 2.2;
+				fill: none;
+				marker-end: url(#arrow);
+			}
+		</style>
+	</defs>
+
+	<!-- Background -->
+	<rect width="1800" height="1120" fill="#ffffff" />
+
+	<!-- Header -->
+	<text x="900" y="62" text-anchor="middle" class="title">
+		Quantitative ML Research Platform Architecture
+	</text>
+
+	<text x="900" y="94" text-anchor="middle" class="subtitle">
+		Simplified and Redacted for Public Portfolio — proprietary implementation details are intentionally omitted.
+	</text>
+
+	<!-- ======================================================= -->
+	<!-- COLUMN 1: DATA SOURCES -->
+	<!-- ======================================================= -->
+
+	<rect
+		x="35"
+		y="130"
+		width="300"
+		height="650"
+		rx="18"
+		fill="#f0f7ff"
+		stroke="#9cc7f5"
+		stroke-width="1.5"
+	/>
+
+	<text x="60" y="170" class="section-title">Data Sources</text>
+	<text x="60" y="194" class="section-subtitle">
+		Market, research, and internal data
+	</text>
+
+	<!-- IBKR -->
+	<rect
+		x="55"
+		y="220"
+		width="260"
+		height="120"
+		rx="14"
+		fill="#ffffff"
+		stroke="#b8d8f8"
+		filter="url(#shadow)"
+	/>
+	<circle cx="82" cy="253" r="13" fill="#2563eb" />
+	<rect x="75" y="253" width="5" height="18" rx="2" fill="#ffffff" />
+	<rect x="83" y="246" width="5" height="25" rx="2" fill="#ffffff" />
+	<rect x="91" y="238" width="5" height="33" rx="2" fill="#ffffff" />
+
+	<text x="110" y="254" class="box-title">Interactive Brokers API</text>
+	<text x="110" y="276" class="box-text">Live + historical data</text>
+	<text x="72" y="304" class="box-text">• Futures and ETF market data</text>
+	<text x="72" y="325" class="box-text">• Broker / execution interface</text>
+
+	<!-- Historical -->
+	<rect
+		x="55"
+		y="355"
+		width="260"
+		height="120"
+		rx="14"
+		fill="#ffffff"
+		stroke="#b8d8f8"
+		filter="url(#shadow)"
+	/>
+	<rect x="71" y="383" width="24" height="30" rx="4" fill="#2563eb" />
+	<line x1="77" y1="391" x2="89" y2="391" stroke="#ffffff" stroke-width="2" />
+	<line x1="77" y1="398" x2="89" y2="398" stroke="#ffffff" stroke-width="2" />
+	<line x1="77" y1="405" x2="89" y2="405" stroke="#ffffff" stroke-width="2" />
+
+	<text x="110" y="391" class="box-title">Historical Market Data</text>
+	<text x="110" y="413" class="box-text">Prices and reference series</text>
+	<text x="72" y="441" class="box-text">• Supplemental market history</text>
+	<text x="72" y="462" class="box-text">• Economic / reference inputs</text>
+
+	<!-- Research -->
+	<rect
+		x="55"
+		y="490"
+		width="260"
+		height="120"
+		rx="14"
+		fill="#ffffff"
+		stroke="#b8d8f8"
+		filter="url(#shadow)"
+	/>
+	<rect x="71" y="518" width="24" height="30" rx="4" fill="#2563eb" />
+	<line x1="77" y1="526" x2="89" y2="526" stroke="#ffffff" stroke-width="2" />
+	<line x1="77" y1="533" x2="89" y2="533" stroke="#ffffff" stroke-width="2" />
+	<line x1="77" y1="540" x2="89" y2="540" stroke="#ffffff" stroke-width="2" />
+
+	<text x="110" y="526" class="box-title">Research Notes / Papers</text>
+	<text x="110" y="548" class="box-text">Academic and technical content</text>
+	<text x="72" y="576" class="box-text">• Papers and research references</text>
+	<text x="72" y="597" class="box-text">• Experiment documentation</text>
+
+	<!-- Trade history -->
+	<rect
+		x="55"
+		y="625"
+		width="260"
+		height="120"
+		rx="14"
+		fill="#ffffff"
+		stroke="#b8d8f8"
+		filter="url(#shadow)"
+	/>
+	<ellipse cx="83" cy="655" rx="15" ry="7" fill="#2563eb" />
+	<rect x="68" y="655" width="30" height="25" fill="#2563eb" />
+	<ellipse cx="83" cy="680" rx="15" ry="7" fill="#1d4ed8" />
+
+	<text x="110" y="660" class="box-title">Internal Trade History</text>
+	<text x="110" y="682" class="box-text">Taken Group research history</text>
+	<text x="72" y="710" class="box-text">• Prior simulated / tracked results</text>
+	<text x="72" y="731" class="box-text">• Research comparison datasets</text>
+
+	<!-- ======================================================= -->
+	<!-- COLUMN 2: STORAGE -->
+	<!-- ======================================================= -->
+
+	<rect
+		x="360"
+		y="130"
+		width="325"
+		height="650"
+		rx="18"
+		fill="#f0fbf6"
+		stroke="#9ed8bd"
+		stroke-width="1.5"
+	/>
+
+	<text x="385" y="170" class="section-title">Storage &amp; Infrastructure</text>
+	<text x="385" y="194" class="section-subtitle">
+		Data, caching, metadata, and tooling
+	</text>
+
+	<!-- TrueNAS -->
+	<rect
+		x="380"
+		y="220"
+		width="285"
+		height="120"
+		rx="14"
+		fill="#ffffff"
+		stroke="#b6e1cb"
+		filter="url(#shadow)"
+	/>
+	<rect x="400" y="245" width="34" height="12" rx="3" fill="#0f9f6e" />
+	<rect x="400" y="261" width="34" height="12" rx="3" fill="#0f9f6e" />
+	<rect x="400" y="277" width="34" height="12" rx="3" fill="#0f9f6e" />
+	<circle cx="427" cy="251" r="2" fill="#ffffff" />
+	<circle cx="427" cy="267" r="2" fill="#ffffff" />
+	<circle cx="427" cy="283" r="2" fill="#ffffff" />
+
+	<text x="452" y="252" class="box-title">TrueNAS Scale</text>
+	<text x="452" y="274" class="box-text">Server / persistent storage</text>
+	<text x="398" y="304" class="box-text">• Datasets, files, and model artifacts</text>
+	<text x="398" y="325" class="box-text">• Experiment and cache storage</text>
+
+	<!-- MariaDB -->
+	<rect
+		x="380"
+		y="355"
+		width="285"
+		height="120"
+		rx="14"
+		fill="#ffffff"
+		stroke="#b6e1cb"
+		filter="url(#shadow)"
+	/>
+	<ellipse cx="417" cy="389" rx="18" ry="8" fill="#10b981" />
+	<rect x="399" y="389" width="36" height="27" fill="#10b981" />
+	<ellipse cx="417" cy="416" rx="18" ry="8" fill="#059669" />
+
+	<text x="452" y="391" class="box-title">MariaDB</text>
+	<text x="452" y="413" class="box-text">Structured research database</text>
+	<text x="398" y="441" class="box-text">• Metadata and configuration</text>
+	<text x="398" y="462" class="box-text">• Experiment / study results</text>
+
+	<!-- Redis -->
+	<rect
+		x="380"
+		y="490"
+		width="285"
+		height="120"
+		rx="14"
+		fill="#ffffff"
+		stroke="#b6e1cb"
+		filter="url(#shadow)"
+	/>
+	<polygon points="417,516 438,528 417,540 396,528" fill="#dc2626" />
+	<polygon points="417,530 438,542 417,554 396,542" fill="#ef4444" />
+	<polygon points="417,544 438,556 417,568 396,556" fill="#b91c1c" />
+
+	<text x="452" y="526" class="box-title">Redis Cache</text>
+	<text x="452" y="548" class="box-text">Intermediate state and caching</text>
+	<text x="398" y="576" class="box-text">• Feature / computation cache</text>
+	<text x="398" y="597" class="box-text">• Session and workflow state</text>
+
+	<!-- DBeaver -->
+	<rect
+		x="380"
+		y="625"
+		width="285"
+		height="120"
+		rx="14"
+		fill="#ffffff"
+		stroke="#b6e1cb"
+		filter="url(#shadow)"
+	/>
+	<rect x="397" y="649" width="40" height="28" rx="3" fill="#334155" />
+	<rect x="402" y="654" width="30" height="18" fill="#f8fafc" />
+	<rect x="413" y="677" width="8" height="9" fill="#334155" />
+	<rect x="405" y="686" width="24" height="4" rx="2" fill="#334155" />
+
+	<text x="452" y="657" class="box-title">DBeaver</text>
+	<text x="452" y="679" class="box-text">Database exploration UI</text>
+	<text x="398" y="707" class="box-text">• Query / inspect research data</text>
+	<text x="398" y="728" class="box-text">• Development and debugging</text>
+
+	<!-- ======================================================= -->
+	<!-- COLUMN 3: RESEARCH PIPELINE -->
+	<!-- ======================================================= -->
+
+	<rect
+		x="710"
+		y="130"
+		width="350"
+		height="650"
+		rx="18"
+		fill="#f6f2ff"
+		stroke="#cab8ff"
+		stroke-width="1.5"
+	/>
+
+	<text x="735" y="170" class="section-title">Research Pipeline</text>
+	<text x="735" y="194" class="section-subtitle">
+		From raw data to model-ready features
+	</text>
+
+	<!-- 1 Data processing -->
+	<rect
+		x="730"
+		y="220"
+		width="310"
+		height="115"
+		rx="14"
+		fill="#ffffff"
+		stroke="#d7caff"
+		filter="url(#shadow)"
+	/>
+	<circle cx="758" cy="250" r="15" fill="#6d4ad8" />
+	<text x="758" y="255" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#fff">1</text>
+
+	<text x="787" y="248" class="box-title">Data Processing</text>
+	<text x="750" y="276" class="box-text">• Continuous-series construction</text>
+	<text x="750" y="297" class="box-text">• Data cleaning / normalization</text>
+	<text x="750" y="318" class="box-text">• Session and roll handling</text>
+
+	<line x1="885" y1="335" x2="885" y2="360" class="arrow" />
+
+	<!-- 2 Statistical -->
+	<rect
+		x="730"
+		y="365"
+		width="310"
+		height="115"
+		rx="14"
+		fill="#ffffff"
+		stroke="#d7caff"
+		filter="url(#shadow)"
+	/>
+	<circle cx="758" cy="395" r="15" fill="#6d4ad8" />
+	<text x="758" y="400" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#fff">2</text>
+
+	<text x="787" y="393" class="box-title">Statistical Studies</text>
+	<text x="750" y="421" class="box-text">• Fractional differentiation</text>
+	<text x="750" y="442" class="box-text">• Stationarity / dependence tests</text>
+	<text x="750" y="463" class="box-text">• Distribution and sensitivity analysis</text>
+
+	<line x1="885" y1="480" x2="885" y2="505" class="arrow" />
+
+	<!-- 3 Event -->
+	<rect
+		x="730"
+		y="510"
+		width="310"
+		height="115"
+		rx="14"
+		fill="#ffffff"
+		stroke="#d7caff"
+		filter="url(#shadow)"
+	/>
+	<circle cx="758" cy="540" r="15" fill="#6d4ad8" />
+	<text x="758" y="545" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#fff">3</text>
+
+	<text x="787" y="538" class="box-title">Event Sampling</text>
+	<text x="750" y="566" class="box-text">• Structural / event-based methods</text>
+	<text x="750" y="587" class="box-text">• Sampling calibration</text>
+	<text x="750" y="608" class="box-text">• Event overlap / stability diagnostics</text>
+
+	<line x1="885" y1="625" x2="885" y2="650" class="arrow" />
+
+	<!-- 4 Feature -->
+	<rect
+		x="730"
+		y="655"
+		width="310"
+		height="105"
+		rx="14"
+		fill="#ffffff"
+		stroke="#d7caff"
+		filter="url(#shadow)"
+	/>
+	<circle cx="758" cy="685" r="15" fill="#6d4ad8" />
+	<text x="758" y="690" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#fff">4</text>
+
+	<text x="787" y="683" class="box-title">Feature Engineering</text>
+	<text x="750" y="711" class="box-text">• Technical / structural features</text>
+	<text x="750" y="732" class="box-text">• Reproducible feature datasets</text>
+
+	<!-- ======================================================= -->
+	<!-- COLUMN 4: MODELING -->
+	<!-- ======================================================= -->
+
+	<rect
+		x="1085"
+		y="130"
+		width="310"
+		height="650"
+		rx="18"
+		fill="#fff8ed"
+		stroke="#f3c987"
+		stroke-width="1.5"
+	/>
+
+	<text x="1110" y="170" class="section-title">Modeling Layer</text>
+	<text x="1110" y="194" class="section-subtitle">
+		Representation learning + prediction
+	</text>
+
+	<!-- Transformer -->
+	<rect
+		x="1105"
+		y="220"
+		width="270"
+		height="235"
+		rx="14"
+		fill="#ffffff"
+		stroke="#f0cf9b"
+		filter="url(#shadow)"
+	/>
+
+	<circle cx="1140" cy="258" r="13" fill="#c56b16" />
+	<circle cx="1123" cy="285" r="9" fill="#c56b16" />
+	<circle cx="1157" cy="285" r="9" fill="#c56b16" />
+	<line x1="1140" y1="271" x2="1127" y2="279" stroke="#c56b16" stroke-width="3" />
+	<line x1="1140" y1="271" x2="1153" y2="279" stroke="#c56b16" stroke-width="3" />
+
+	<text x="1175" y="256" class="box-title">Transformer /</text>
+	<text x="1175" y="277" class="box-title">Encoder Model</text>
+
+	<text x="1125" y="317" class="box-text">• Learn market representations</text>
+	<text x="1125" y="340" class="box-text">• Multi-horizon temporal context</text>
+	<text x="1125" y="363" class="box-text">• Embedding generation</text>
+	<text x="1125" y="386" class="box-text">• Representation diagnostics</text>
+	<text x="1125" y="409" class="box-text">• Hyperparameter optimization</text>
+
+	<line x1="1240" y1="455" x2="1240" y2="500" class="arrow" />
+
+	<!-- Downstream -->
+	<rect
+		x="1105"
+		y="510"
+		width="270"
+		height="200"
+		rx="14"
+		fill="#ffffff"
+		stroke="#f0cf9b"
+		filter="url(#shadow)"
+	/>
+
+	<circle cx="1140" cy="550" r="8" fill="#b45309" />
+	<circle cx="1122" cy="577" r="8" fill="#b45309" />
+	<circle cx="1158" cy="577" r="8" fill="#b45309" />
+	<line x1="1140" y1="558" x2="1125" y2="571" stroke="#b45309" stroke-width="3" />
+	<line x1="1140" y1="558" x2="1155" y2="571" stroke="#b45309" stroke-width="3" />
+
+	<text x="1175" y="552" class="box-title">Downstream ML Models</text>
+	<text x="1125" y="594" class="box-text">• Forecasting / classification</text>
+	<text x="1125" y="617" class="box-text">• Engineered + learned features</text>
+	<text x="1125" y="640" class="box-text">• Hyperparameter optimization</text>
+	<text x="1125" y="663" class="box-text">• Walk-forward validation</text>
+	<text x="1125" y="686" class="box-text">• Model persistence</text>
+
+	<!-- ======================================================= -->
+	<!-- COLUMN 5: EVALUATION -->
+	<!-- ======================================================= -->
+
+	<rect
+		x="1420"
+		y="130"
+		width="345"
+		height="650"
+		rx="18"
+		fill="#f0f7ff"
+		stroke="#9cc7f5"
+		stroke-width="1.5"
+	/>
+
+	<text x="1445" y="170" class="section-title">Evaluation &amp; Validation</text>
+	<text x="1445" y="194" class="section-subtitle">
+		Rigorous out-of-sample testing
+	</text>
+
+	<!-- Evaluation -->
+	<rect x="1440" y="220" width="305" height="85" rx="13" fill="#ffffff" stroke="#b8d8f8" filter="url(#shadow)" />
+	<rect x="1460" y="244" width="23" height="23" rx="4" fill="#2563eb" />
+	<path d="M1466 255 l5 5 l8 -10" stroke="#fff" stroke-width="2.5" fill="none" />
+	<text x="1498" y="250" class="small-title">Evaluation Framework</text>
+	<text x="1498" y="272" class="small-text">• Standardized metrics</text>
+	<text x="1498" y="290" class="small-text">• Reproducible comparisons</text>
+
+	<!-- Walk forward -->
+	<rect x="1440" y="320" width="305" height="85" rx="13" fill="#ffffff" stroke="#b8d8f8" filter="url(#shadow)" />
+	<polyline points="1462,379 1470,366 1478,371 1488,350" fill="none" stroke="#2563eb" stroke-width="3" />
+	<text x="1498" y="350" class="small-title">Walk-Forward Testing</text>
+	<text x="1498" y="372" class="small-text">• Out-of-sample validation</text>
+	<text x="1498" y="390" class="small-text">• Multiple temporal regimes</text>
+
+	<!-- Leakage -->
+	<rect x="1440" y="420" width="305" height="85" rx="13" fill="#ffffff" stroke="#b8d8f8" filter="url(#shadow)" />
+	<path d="M1472 443 l12 5 v12 c0 9 -6 16 -12 19 c-6 -3 -12 -10 -12 -19 v-12 z" fill="#2563eb" />
+	<path d="M1467 458 l4 4 l7 -8" stroke="#fff" stroke-width="2" fill="none" />
+	<text x="1498" y="450" class="small-title">Leakage-Aware Validation</text>
+	<text x="1498" y="472" class="small-text">• Historical-only calibration</text>
+	<text x="1498" y="490" class="small-text">• Strict temporal separation</text>
+
+	<!-- Backtesting -->
+	<rect x="1440" y="520" width="305" height="85" rx="13" fill="#ffffff" stroke="#b8d8f8" filter="url(#shadow)" />
+	<rect x="1460" y="558" width="5" height="18" fill="#2563eb" />
+	<rect x="1469" y="549" width="5" height="27" fill="#2563eb" />
+	<rect x="1478" y="540" width="5" height="36" fill="#2563eb" />
+	<text x="1498" y="550" class="small-title">Backtesting</text>
+	<text x="1498" y="572" class="small-text">• Historical performance</text>
+	<text x="1498" y="590" class="small-text">• Benchmark comparison</text>
+
+	<!-- Costs -->
+	<rect x="1440" y="620" width="305" height="115" rx="13" fill="#ffffff" stroke="#b8d8f8" filter="url(#shadow)" />
+	<circle cx="1472" cy="658" r="18" fill="#2563eb" />
+	<path d="M1472 640 v18 h18" fill="none" stroke="#fff" stroke-width="3" />
+	<text x="1498" y="650" class="small-title">Execution &amp; Risk Checks</text>
+	<text x="1498" y="672" class="small-text">• Costs and turnover</text>
+	<text x="1498" y="690" class="small-text">• Drawdown / Sharpe analysis</text>
+	<text x="1498" y="708" class="small-text">• Realistic trading constraints</text>
+
+	<!-- Main horizontal arrows -->
+	<line x1="335" y1="455" x2="355" y2="455" class="arrow" />
+	<line x1="685" y1="455" x2="705" y2="455" class="arrow" />
+	<line x1="1060" y1="455" x2="1080" y2="455" class="arrow" />
+	<line x1="1395" y1="455" x2="1415" y2="455" class="arrow" />
+
+	<!-- ======================================================= -->
+	<!-- APPLICATION LAYER -->
+	<!-- ======================================================= -->
+
+	<rect
+		x="35"
+		y="815"
+		width="1360"
+		height="225"
+		rx="18"
+		fill="#f7f3ff"
+		stroke="#cbbcf5"
+		stroke-width="1.5"
+	/>
+
+	<text x="60" y="850" class="section-title">Application Layer / User Interfaces</text>
+	<text x="60" y="874" class="section-subtitle">
+		Tools for research, analysis, and interaction
+	</text>
+
+	<!-- App card 1 -->
+	<rect x="55" y="900" width="205" height="115" rx="12" fill="#fff" stroke="#d8ccf5" />
+	<text x="75" y="930" class="small-title">Market Dashboard</text>
+	<text x="75" y="954" class="small-text">• Key research metrics</text>
+	<text x="75" y="974" class="small-text">• Portfolio / strategy views</text>
+	<text x="75" y="994" class="small-text">• Custom visualization</text>
+
+	<!-- App card 2 -->
+	<rect x="275" y="900" width="205" height="115" rx="12" fill="#fff" stroke="#d8ccf5" />
+	<text x="295" y="930" class="small-title">Live Charting</text>
+	<text x="295" y="954" class="small-text">• Interactive charts</text>
+	<text x="295" y="974" class="small-text">• Technical indicators</text>
+	<text x="295" y="994" class="small-text">• Symbol / date selectors</text>
+
+	<!-- App card 3 -->
+	<rect x="495" y="900" width="205" height="115" rx="12" fill="#fff" stroke="#d8ccf5" />
+	<text x="515" y="930" class="small-title">Study Interfaces</text>
+	<text x="515" y="954" class="small-text">• Run experiments</text>
+	<text x="515" y="974" class="small-text">• Configure parameters</text>
+	<text x="515" y="994" class="small-text">• Compare results</text>
+
+	<!-- App card 4 -->
+	<rect x="715" y="900" width="205" height="115" rx="12" fill="#fff" stroke="#d8ccf5" />
+	<text x="735" y="930" class="small-title">Agent / Research Assistant</text>
+	<text x="735" y="954" class="small-text">• Natural-language queries</text>
+	<text x="735" y="974" class="small-text">• Research / code assistance</text>
+	<text x="735" y="994" class="small-text">• Experiment guidance</text>
+
+	<!-- App card 5 -->
+	<rect x="935" y="900" width="205" height="115" rx="12" fill="#fff" stroke="#d8ccf5" />
+	<text x="955" y="930" class="small-title">Monitoring &amp; Analytics</text>
+	<text x="955" y="954" class="small-text">• System / model health</text>
+	<text x="955" y="974" class="small-text">• Performance trends</text>
+	<text x="955" y="994" class="small-text">• Experiment tracking</text>
+
+	<!-- App card 6 -->
+	<rect x="1155" y="900" width="220" height="115" rx="12" fill="#fff" stroke="#d8ccf5" />
+	<text x="1175" y="930" class="small-title">FastAPI + SvelteKit</text>
+	<text x="1175" y="954" class="small-text">• REST API / backend jobs</text>
+	<text x="1175" y="974" class="small-text">• Interactive frontend</text>
+	<text x="1175" y="994" class="small-text">• Dockerized services</text>
+
+	<!-- App ↔ storage -->
+	<line x1="520" y1="815" x2="520" y2="785" class="arrow" />
+	<text x="535" y="802" class="flow-label">Query data / results</text>
+
+	<!-- App ↔ modeling -->
+	<line x1="1240" y1="815" x2="1240" y2="785" class="arrow" />
+	<text x="1255" y="802" class="flow-label">Access models / outputs</text>
+
+	<!-- ======================================================= -->
+	<!-- OUTPUTS -->
+	<!-- ======================================================= -->
+
+	<rect
+		x="1420"
+		y="815"
+		width="345"
+		height="225"
+		rx="18"
+		fill="#f1fbf5"
+		stroke="#a9ddbd"
+		stroke-width="1.5"
+	/>
+
+	<text x="1445" y="850" class="section-title">Outputs</text>
+	<text x="1445" y="874" class="section-subtitle">Research results and diagnostics</text>
+
+	<rect x="1440" y="900" width="305" height="32" rx="8" fill="#ffffff" stroke="#b9e5c8" />
+	<text x="1460" y="921" class="small-title">Research insights</text>
+
+	<rect x="1440" y="940" width="305" height="32" rx="8" fill="#ffffff" stroke="#b9e5c8" />
+	<text x="1460" y="961" class="small-title">Model diagnostics</text>
+
+	<rect x="1440" y="980" width="305" height="32" rx="8" fill="#ffffff" stroke="#b9e5c8" />
+	<text x="1460" y="1001" class="small-title">Performance monitoring</text>
+
+	<!-- evaluation → outputs -->
+	<line x1="1592" y1="780" x2="1592" y2="810" class="arrow" />
+
+	<!-- Footer banner -->
+	<rect
+		x="35"
+		y="1060"
+		width="1730"
+		height="42"
+		rx="10"
+		fill="#eef2f7"
+		stroke="#cbd5e1"
+	/>
+
+	<text x="900" y="1087" text-anchor="middle" class="footer">
+		Reproducible Research
+		<tspan dx="22">→</tspan>
+		<tspan dx="22">Iterative Experimentation</tspan>
+		<tspan dx="22">→</tspan>
+		<tspan dx="22">Measurable Performance</tspan>
+	</text>
+
+	<text x="1738" y="1090" text-anchor="end" class="public-note">
+		Simplified for public portfolio use
+	</text>
+</svg>
