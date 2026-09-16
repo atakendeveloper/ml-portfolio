@@ -11,7 +11,7 @@
 				'Deployed Dockerized 2D CNN inference services in Azure, improving real-time well-status prediction accuracy from 77% to 98%.',
 				'Built full-stack engineering applications using Python, Flask, Dash, SQL, Docker, Azure DevOps, and AVEVA PI.',
 				'Architected a 22-agent enterprise RAG ecosystem across multiple engineering domains.',
-				'Developed real-time surveillance and manage-by-exception analytics for offshore engineering workflows.'
+				'Created and maintained 25+ production manage-by-exception workflows across Seeq, Power Automate, Azure, and AVEVA PI for offshore operations.'
 			],
 			tags: ['Python', 'PyTorch', 'Azure', 'Docker', 'AVEVA PI', 'RAG']
 		},
@@ -30,27 +30,30 @@
 		},
 		{
 			company: 'Imubit',
-			title: 'Implementation Engineer',
+			title: 'Implementation Engineer (Forward Deployed Engineer)',
 			dates: '2022 – 2024',
 			type: 'Industrial AI',
 			points: [
-				'Supported five closed-loop reinforcement-learning deployments across industrial process applications.',
+				'Designed and deployed five closed-loop reinforcement-learning systems from POC to production across industrial process applications.',
 				'Used SHAP, hyperparameter optimization, YAML configuration, Grafana, and cloud infrastructure to support deployed optimization systems.',
 				'Delivered projects producing more than $2M in documented value.'
 			],
 			tags: ['Reinforcement Learning', 'SHAP', 'AWS', 'Grafana']
 		},
-		{
-			company: 'Chevron Phillips Chemical',
-			title: 'Process / Advanced Process Control Engineer',
-			dates: '2020 – 2022',
-			type: 'Chemical Engineering',
-			points: [
-				'Developed and supported advanced process control and real-time optimization applications.',
-				'Worked across olefins operations, polyethylene process engineering, and industrial control systems.'
-			],
-			tags: ['APC', 'RTO', 'Process Engineering']
-		}
+        {
+            company: 'Chevron Phillips Chemical',
+            title: 'Process / Advanced Process Control Engineer',
+            dates: '2020 – 2022',
+            type: 'Chemical Engineering',
+            points: [
+                'Developed and supported advanced process control and real-time optimization applications across olefins operations.',
+                'Automated real-time furnace monitoring with Python by generating custom status signals and operator alerts to improve response time.',
+                'Modernized plant data analysis using Python regression models for distillation quality control and production optimization.',
+                'Built real-time and forecasted emissions dashboards using Python and Power BI to help prevent EPA compliance violations across three plants.',
+                'Identified approximately $350K/year in nitrogen savings through condition-based analysis of a closed-loop regeneration system.'
+            ],
+            tags: ['Python', 'APC', 'Seeq', 'Power BI', 'Process Engineering']
+        }
 	];
 </script>
 

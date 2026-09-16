@@ -20,7 +20,7 @@
 
 			<p class="mt-5 text-lg leading-8 text-gray-500">
 				I’m interested in technically challenging work across machine learning, applied AI,
-				time-series research, and production engineering systems.
+				time series research, and production engineering systems.
 			</p>
 		</div>
 	</div>
