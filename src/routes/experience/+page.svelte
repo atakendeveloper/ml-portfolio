@@ -3,8 +3,8 @@
 
 	const roles = [
 		{
-			company: 'Occidental',
-			title: 'Data Scientist / Surveillance Engineer',
+			company: 'Occidental Petroleum (Oxy)',
+			title: 'Data Scientist',
 			dates: '2024 – Present',
 			type: 'Contract · Remote',
 			points: [
@@ -35,14 +35,14 @@
 			type: 'Industrial AI',
 			points: [
 				'Designed and deployed five closed-loop reinforcement-learning systems from POC to production across industrial process applications.',
-				'Used SHAP, hyperparameter optimization, YAML configuration, Grafana, and cloud infrastructure to support deployed optimization systems.',
+				'Analyzed model behavior and supported production tuning using SHAP, hyperparameter optimization, YAML deployment configuration, Grafana, and cloud infrastructure.',
 				'Delivered projects producing more than $2M in documented value.'
 			],
 			tags: ['Reinforcement Learning', 'SHAP', 'AWS', 'Grafana']
 		},
         {
             company: 'Chevron Phillips Chemical',
-            title: 'Process / Advanced Process Control Engineer',
+            title: 'Process / Operations / Advanced Process Control Engineer',
             dates: '2020 – 2022',
             type: 'Chemical Engineering',
             points: [
