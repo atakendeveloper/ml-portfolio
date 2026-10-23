@@ -2,6 +2,18 @@
 	<title>Contact | Ashley Taken</title>
 </svelte:head>
 
+<script lang="ts">
+    let showEmail = $state(false);
+    const email = 'ashleytaken1122@gmail.com';
+
+    let copied = $state(false);
+
+    async function copyEmail() {
+        await navigator.clipboard.writeText(email);
+        copied = true;
+    }
+</script>
+
 <section class="border-b border-gray-200 bg-white">
 	<div class="page-shell py-12">
 		<div class="max-w-3xl">
@@ -28,20 +40,6 @@
 
 <section class="page-shell py-14">
 	<div class="grid gap-6 lg:grid-cols-3">
-		<a
-			href="https://github.com/atakendeveloper"
-			target="_blank"
-			rel="noreferrer"
-			class="card group p-7 transition hover:-translate-y-1 hover:shadow-lg"
-		>
-			<div class="metric-label">GitHub</div>
-			<div class="mt-3 text-xl font-bold text-gray-950">
-				atakendeveloper
-			</div>
-			<div class="mt-4 text-sm font-bold text-purple-700">
-				View profile →
-			</div>
-		</a>
 
 		<a
 			href="https://www.linkedin.com/in/ashleytaken/"
@@ -59,6 +57,38 @@
 				View profile →
 			</div>
 		</a>
+
+		<div class="card p-7">
+			<div class="metric-label">Email</div>
+
+			<div class="mt-3 text-xl font-bold text-gray-950">
+				Get in Touch
+			</div>
+
+			{#if !showEmail}
+				<button
+					type="button"
+					onclick={() => (showEmail = true)}
+					class="mt-4 cursor-pointer text-sm font-bold text-purple-700 hover:text-purple-900"
+				>
+					Email Me →
+				</button>
+			{:else}
+				<div class="mt-4 flex flex-wrap items-center gap-3">
+					<span class="text-sm font-semibold text-gray-700">
+						{email}
+					</span>
+
+					<button
+						type="button"
+						onclick={copyEmail}
+						class="cursor-pointer rounded-md bg-gray-900 px-3 py-2 text-xs font-bold !text-white hover:bg-gray-700"
+					>
+						{copied ? 'Copied!' : 'Copy'}
+					</button>
+				</div>
+			{/if}
+		</div>
 
 		<div class="card p-7">
 			<div class="metric-label">Location</div>

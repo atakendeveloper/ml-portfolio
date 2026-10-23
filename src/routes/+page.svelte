@@ -30,7 +30,7 @@
     <div class="page-shell pt-8 pb-6 md:pt-10 md:pb-7">
 		<div class="max-w-5xl">
 			<div class="eyebrow mb-5">
-				Machine Learning · Applied AI · Quantitative Research
+				Machine Learning · Applied AI · Industrial Applications · Quantitative Research
 			</div>
 
             <h1
@@ -48,28 +48,19 @@
 
 			<div class="mt-5 flex flex-wrap gap-2">
                 <a
-                    href="/experience"
+                    href="/resume"
                     class="rounded-md border border-purple-200 bg-purple-50 px-4 py-2.5 text-sm font-bold text-purple-800 transition hover:bg-purple-100"
                 >
-                    Experience
+                    Resume
                 </a>
-
-				<a
-					href="/contact"
-					class="rounded-md border border-purple-200 bg-purple-50 px-4 py-2.5 text-sm font-bold text-purple-800 transition hover:bg-purple-100"
-				>
-					Contact
-				</a>
 
                 <a
-                    href="/Ashley-Taken-Resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/contact"
                     class="rounded-md border border-purple-200 bg-purple-50 px-4 py-2.5 text-sm font-bold text-purple-800 transition hover:bg-purple-100"
                 >
-                    Resume PDF
+                    Contact
                 </a>
-			</div>
+            </div>
 		</div>
 	</div>
 </section>
@@ -92,44 +83,15 @@
 			accent="purple"
 		/>
 
-		<div
-			class="relative flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
-		>
-			<div class="flex items-start justify-between gap-4">
-				<div class="text-sm font-black text-blue-600">
-					02
-				</div>
-
-				<div
-					class="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-blue-700"
-				>
-					Coming Soon
-				</div>
-			</div>
-
-			<div class="mt-5">
-				<div class="text-xs font-bold uppercase tracking-[0.16em] text-gray-400">
-					Agentic Research Platform
-				</div>
-
-				<h3 class="mt-2 text-xl font-bold tracking-tight text-gray-950">
-					AI Research & Codebase Intelligence
-				</h3>
-
-				<p class="mt-3 text-sm leading-6 text-gray-500">
-					A quantitative research copilot combining codebase intelligence, literature
-					retrieval, hybrid search, cross-encoder reranking, MCP tooling, task routing,
-					and a dedicated evaluation framework.
-				</p>
-			</div>
-
-			<div class="mt-auto flex flex-wrap gap-2 pt-6">
-				{#each ['RAG', 'Agents', 'MCP', 'BM25', 'LLM Evaluation'] as tag}
-					<TechTag label={tag} />
-				{/each}
-			</div>
-		</div>
-
+		<ProjectCard
+			number="02"
+			title="AI Research &amp; Codebase Intelligence"
+			subtitle="Agentic Research Platform"
+			description="A quantitative ML research copilot connecting literature to code through hybrid retrieval and LangGraph orchestration with optional reranking and a dedicated evaluation harness."
+			href="/projects/research-agent"
+			tags={['LangGraph', 'RAG', 'MCP', 'BM25', 'LLM Evaluation']}
+			accent="blue"
+		/>
 		<div
 			class="relative flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
 		>

@@ -2,9 +2,8 @@
 	import { page } from '$app/state';
 
 	const nav = [
-		{ label: 'Projects', href: '/#projects' },
-		{ label: 'Experience', href: '/experience' },
 		{ label: 'Resume', href: '/resume' },
+		{ label: 'Projects', href: '/#projects' },
 		{ label: 'Contact', href: '/contact' }
 	];
 </script>

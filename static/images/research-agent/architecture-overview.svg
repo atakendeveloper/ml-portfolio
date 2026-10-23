@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1050" role="img" aria-labelledby="title desc">
+<title id="title">Taken Group Research Agent Architecture</title>
+<desc id="desc">Source documents feed extraction and persistent dense and lexical indexes. Heuristic routing guides a LangGraph workflow from retrieval to planning and research with optional implementation mapping before review. Cross encoder reranking is an optional dense search API branch. Evaluation records metrics including Recall at K and source grounded faithfulness alongside research proposals.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#172033"/></marker>
+<filter id="shadow" x="-10%" y="-10%" width="120%" height="125%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.07"/></filter>
+<style>
+text{font-family:Inter,Arial,sans-serif;fill:#172033}
+.title{font-size:38px;font-weight:800;fill:#14213d}.subtitle{font-size:18px;fill:#53627a}
+.section{font-size:25px;font-weight:800}.sub{font-size:15px;fill:#53627a}
+.heading{font-size:20px;font-weight:700}.body{font-size:17px;fill:#53627a}
+.label{font-size:14px;fill:#53627a}.badge{font-size:15px;font-weight:800;fill:white}
+.arrow{fill:none;stroke:#172033;stroke-width:2;marker-end:url(#arrow)}
+.optional{stroke-dasharray:6 5}
+</style>
+</defs>
+<rect x="1" y="1" width="1798" height="1048" rx="20" fill="#fff" stroke="#dfe3e8"/>
+<text x="900" y="58" text-anchor="middle" class="title">Taken Group Research Agent Architecture</text>
+<text x="900" y="90" text-anchor="middle" class="subtitle">Research Agent Architecture | Retrieval, Orchestration, and Evaluation</text>
+
+<rect x="35" y="125" width="320" height="700" rx="18" fill="#f0f7ff" stroke="#9cc7f5"/><text x="57" y="162" class="section">Source Documents</text><text x="57" y="187" class="sub">Inputs for research context</text>
+<rect x="380" y="125" width="450" height="700" rx="18" fill="#f1fbf5" stroke="#a9ddbd"/><text x="402" y="162" class="section">Knowledge &amp; Retrieval</text><text x="402" y="187" class="sub">Ingestion and search infrastructure</text>
+<rect x="855" y="125" width="450" height="700" rx="18" fill="#f7f3ff" stroke="#cbbcf5"/><text x="877" y="162" class="section">Agent Orchestration</text><text x="877" y="187" class="sub">Task aware LangGraph workflow</text>
+<rect x="1330" y="125" width="435" height="700" rx="18" fill="#fff8ee" stroke="#f0cf9b"/><text x="1352" y="162" class="section">Evaluation &amp; Research</text><text x="1352" y="187" class="sub">Quality checks and research records</text>
+<rect x="55" y="210" width="280" height="125" rx="13" fill="white" stroke="#2563eb" filter="url(#shadow)"/>
+<circle cx="81" cy="239" r="13" fill="#2563eb"/><text x="81" y="244" text-anchor="middle" class="badge">P</text>
+<text x="104" y="245" class="heading">Technical Papers</text>
+<text x="75" y="275" class="body">Research literature</text>
+<text x="75" y="300" class="body">Methods and references</text>
+<rect x="55" y="355" width="280" height="125" rx="13" fill="white" stroke="#2563eb" filter="url(#shadow)"/>
+<circle cx="81" cy="384" r="13" fill="#2563eb"/><text x="81" y="389" text-anchor="middle" class="badge">C</text>
+<text x="104" y="390" class="heading">Source Code</text>
+<text x="75" y="420" class="body">Files and modules</text>
+<text x="75" y="445" class="body">Implementation context</text>
+<rect x="55" y="500" width="280" height="125" rx="13" fill="white" stroke="#2563eb" filter="url(#shadow)"/>
+<circle cx="81" cy="529" r="13" fill="#2563eb"/><text x="81" y="534" text-anchor="middle" class="badge">D</text>
+<text x="104" y="535" class="heading">Project Documents</text>
+<text x="75" y="565" class="body">Technical documentation</text>
+<text x="75" y="590" class="body">Research notes</text>
+<rect x="55" y="645" width="280" height="150" rx="13" fill="white" stroke="#2563eb" filter="url(#shadow)"/>
+<circle cx="81" cy="674" r="13" fill="#2563eb"/><text x="81" y="679" text-anchor="middle" class="badge">F</text>
+<text x="104" y="680" class="heading">File Changes</text>
+<text x="75" y="710" class="body">Create and modify</text>
+<text x="75" y="735" class="body">Move and delete</text>
+<text x="75" y="760" class="body">Watchdog monitoring</text>
+<rect x="400" y="210" width="410" height="105" rx="13" fill="white" stroke="#059669" filter="url(#shadow)"/>
+<circle cx="426" cy="239" r="13" fill="#059669"/><text x="426" y="244" text-anchor="middle" class="badge">1</text>
+<text x="449" y="245" class="heading">Extract &amp; Chunk</text>
+<text x="420" y="275" class="body">Text extraction and metadata</text>
+<text x="420" y="300" class="body">Document and code chunking</text>
+<rect x="400" y="335" width="410" height="105" rx="13" fill="white" stroke="#059669" filter="url(#shadow)"/>
+<circle cx="426" cy="364" r="13" fill="#059669"/><text x="426" y="369" text-anchor="middle" class="badge">2</text>
+<text x="449" y="370" class="heading">Embed &amp; Index</text>
+<text x="420" y="400" class="body">SentenceTransformers embeddings</text>
+<text x="420" y="425" class="body">ChromaDB persistence + BM25</text>
+<rect x="400" y="460" width="410" height="130" rx="13" fill="white" stroke="#059669" filter="url(#shadow)"/>
+<circle cx="426" cy="489" r="13" fill="#059669"/><text x="426" y="494" text-anchor="middle" class="badge">3</text>
+<text x="449" y="495" class="heading">Dense / Hybrid Retrieval</text>
+<text x="420" y="525" class="body">Reciprocal rank fusion for hybrid search</text>
+<text x="420" y="550" class="body">Corpus weighting and diversification</text>
+<text x="420" y="575" class="body">Dense fallback to hybrid by task mode</text>
+<rect x="400" y="615" width="410" height="100" rx="13" fill="white" stroke="#059669" filter="url(#shadow)" stroke-dasharray="6 4"/>
+<text x="420" y="650" class="heading">Cross Encoder Reranking</text>
+<text x="420" y="680" class="body">Optional branch for dense search API</text>
+<rect x="400" y="735" width="410" height="60" rx="13" fill="white" stroke="#059669" filter="url(#shadow)"/>
+<text x="420" y="770" class="heading">Selective Reindexing</text>
+<text x="420" y="784" class="label">Content hashes + embedding version checks</text>
+<path d="M605 315 L605 333" class="arrow"/>
+<path d="M605 440 L605 458" class="arrow"/>
+<path d="M605 590 L605 613" class="arrow optional"/>
+<rect x="875" y="210" width="410" height="100" rx="13" fill="white" stroke="#7544d9" filter="url(#shadow)"/>
+<circle cx="901" cy="239" r="13" fill="#7544d9"/><text x="901" y="244" text-anchor="middle" class="badge">1</text>
+<text x="924" y="245" class="heading">Interface &amp; Task Routing</text>
+<text x="895" y="275" class="body">Open WebUI / FastAPI</text>
+<text x="895" y="300" class="body">Heuristic mode and corpus selection</text>
+<rect x="875" y="335" width="410" height="100" rx="13" fill="white" stroke="#7544d9" filter="url(#shadow)"/>
+<circle cx="901" cy="364" r="13" fill="#7544d9"/><text x="901" y="369" text-anchor="middle" class="badge">2</text>
+<text x="924" y="370" class="heading">Retrieve Context</text>
+<text x="895" y="400" class="body">Dense or hybrid search by task mode</text>
+<text x="895" y="425" class="body">Configured tools can add context</text>
+<rect x="875" y="460" width="410" height="100" rx="13" fill="white" stroke="#7544d9" filter="url(#shadow)"/>
+<circle cx="901" cy="489" r="13" fill="#7544d9"/><text x="901" y="494" text-anchor="middle" class="badge">3</text>
+<text x="924" y="495" class="heading">Plan &amp; Research</text>
+<text x="895" y="525" class="body">Evidence informed planning</text>
+<text x="895" y="550" class="body">Research synthesis and proposals</text>
+<rect x="875" y="585" width="410" height="100" rx="13" fill="white" stroke="#7544d9" filter="url(#shadow)"/>
+<circle cx="901" cy="614" r="13" fill="#7544d9"/><text x="901" y="619" text-anchor="middle" class="badge">4</text>
+<text x="924" y="620" class="heading">Map &amp; Review</text>
+<text x="895" y="650" class="body">Optional implementation mapping</text>
+<text x="895" y="675" class="body">Final review and evidence references</text>
+<rect x="875" y="715" width="410" height="80" rx="13" fill="white" stroke="#7544d9" filter="url(#shadow)" stroke-dasharray="6 4"/>
+<text x="895" y="750" class="heading">MCP Tool Access</text>
+<text x="895" y="780" class="body">Read files · Knowledge search · Run agent</text>
+<path d="M1080 310 L1080 333" class="arrow"/>
+<path d="M1080 435 L1080 458" class="arrow"/>
+<path d="M1080 560 L1080 583" class="arrow"/>
+<path d="M1285 752 H1295 V385 H1287" class="arrow optional"/>
+<rect x="1350" y="210" width="395" height="100" rx="13" fill="white" stroke="#b45309" filter="url(#shadow)"/>
+<circle cx="1376" cy="239" r="13" fill="#b45309"/><text x="1376" y="244" text-anchor="middle" class="badge">1</text>
+<text x="1399" y="245" class="heading">Curated Evaluation Sets</text>
+<text x="1370" y="275" class="body">Retrieval and agent runs</text>
+<text x="1370" y="300" class="body">Code / Literature / Research cases</text>
+<rect x="1350" y="335" width="395" height="250" rx="13" fill="white" stroke="#b45309" filter="url(#shadow)"/>
+<circle cx="1376" cy="364" r="13" fill="#b45309"/><text x="1376" y="369" text-anchor="middle" class="badge">2</text>
+<text x="1399" y="370" class="heading">Metrics &amp; Quality Scoring</text>
+<text x="1370" y="400" class="body">Recall@K and MRR</text>
+<text x="1370" y="435" class="body">Routing checks</text>
+<text x="1370" y="470" class="body">Source grounded faithfulness</text>
+<text x="1370" y="505" class="body">LLM-as-a-judge scoring</text>
+<text x="1370" y="540" class="body">P50 / P95 latency + reranking config</text>
+<rect x="1350" y="610" width="395" height="80" rx="13" fill="white" stroke="#b45309" filter="url(#shadow)"/>
+<circle cx="1376" cy="639" r="13" fill="#b45309"/><text x="1376" y="644" text-anchor="middle" class="badge">3</text>
+<text x="1399" y="645" class="heading">Run Comparisons</text>
+<text x="1370" y="675" class="body">Saved cases and run notes</text>
+<rect x="1350" y="715" width="395" height="80" rx="13" fill="white" stroke="#b45309" filter="url(#shadow)"/>
+<circle cx="1376" cy="744" r="13" fill="#b45309"/><text x="1376" y="749" text-anchor="middle" class="badge">4</text>
+<text x="1399" y="750" class="heading">Experiment Records</text>
+<text x="1370" y="780" class="body">Proposals and status / outcome notes</text>
+<path d="M1547 310 L1547 333" class="arrow"/>
+<path d="M355 385 L378 385" class="arrow"/>
+<path d="M830 385 L853 385" class="arrow"/>
+<path d="M1305 650 L1328 650" class="arrow"/>
+<rect x="35" y="850" width="1730" height="125" rx="18" fill="#f7f3ff" stroke="#cbbcf5"/>
+<text x="60" y="886" class="section">Research Modes &amp; Outputs</text>
+<text x="60" y="920" class="body">Codebase analysis · Literature review · Research synthesis · Critique · Experiment design · Research guidance</text>
+<text x="60" y="950" class="body">Research responses with evidence references · Structured recommendations · Experiment proposals for researcher review</text>
+<rect x="35" y="995" width="1730" height="34" rx="9" fill="#eef2f7" stroke="#cbd5e1"/>
+<text x="900" y="1018" text-anchor="middle" class="label">Docker Compose services · Configurable model access via OpenAI / OpenRouter · Dashed connections indicate optional paths</text>
+</svg>
