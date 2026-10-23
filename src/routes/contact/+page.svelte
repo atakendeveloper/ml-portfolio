@@ -96,7 +96,7 @@
 				Albuquerque, New Mexico
 			</div>
 			<p class="mt-3 text-sm leading-6 text-gray-500">
-				Remote-focused with flexibility for occasional travel.
+				Remote preferred; open to hybrid roles and relocation for the right opportunity.
 			</p>
 		</div>
 	</div>
